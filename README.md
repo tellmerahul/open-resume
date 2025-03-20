@@ -1,10 +1,20 @@
 # OpenResume
 
-OpenResume is a powerful open-source resume builder and resume parser.
+OpenResume is a powerful open-source resume builder and resume parser with a modern, user-friendly interface.
 
 The goal of OpenResume is to provide everyone with free access to a modern professional resume design and enable anyone to apply for jobs with confidence.
 
 Official site: [https://open-resume.com](https://open-resume.com)
+
+## ✨ Modern UI Features
+
+OpenResume features a modern, responsive design with smooth animations and intuitive interactions:
+
+- **Floating Header**: A sleek, transparent header that becomes semi-transparent on scroll
+- **Interactive FAQ**: Modern accordion-style FAQ section with smooth animations
+- **Responsive Design**: Fully responsive layout that works beautifully on all devices
+- **Smooth Animations**: Subtle transitions and hover effects for better user experience
+- **Modern Color Scheme**: Clean, professional color palette with gradient accents
 
 ## ⚒️ Resume Builder
 
@@ -23,7 +33,7 @@ It has 5 Core Features:
 
 ## 🔍 Resume Parser
 
-OpenResume’s second component is the resume parser. For those who have an existing resume, the resume parser can help test and confirm its ATS readability.
+OpenResume's second component is the resume parser. For those who have an existing resume, the resume parser can help test and confirm its ATS readability.
 
 ![Resume Parser Demo](https://i.ibb.co/JvSVwNk/resume-parser-demo-optimize.gif)
 
@@ -34,11 +44,11 @@ You can learn more about the resume parser algorithm in the ["Resume Parser Algo
 | <div style="width:140px">**Category**</div> | <div style="width:100px">**Choice**</div> | **Descriptions** |
 |---|---|---|
 | **Language** | [TypeScript](https://github.com/microsoft/TypeScript) | TypeScript is JavaScript with static type checking and helps catch many silly bugs at code time. |
-| **UI Library** | [React](https://github.com/facebook/react) | React’s declarative syntax and component-based architecture make it simple to develop reactive reusable components. |
+| **UI Library** | [React](https://github.com/facebook/react) | React's declarative syntax and component-based architecture make it simple to develop reactive reusable components. |
 | **State Management** | [Redux Toolkit](https://github.com/reduxjs/redux-toolkit) | Redux toolkit reduces the boilerplate to set up and update a central redux store, which is used in managing the complex resume state. |
 | **CSS Framework** | [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss) | Tailwind speeds up development by providing helpful css utilities and removing the need to context switch between tsx and css files. |
 | **Web Framework** | [NextJS 13](https://github.com/vercel/next.js) | Next.js supports static site generation and helps build efficient React webpages that support SEO. |
-| **PDF Reader** | [PDF.js](https://github.com/mozilla/pdf.js) | PDF.js reads content from PDF files and is used by the resume parser at its first step to read a resume PDF’s content. |
+| **PDF Reader** | [PDF.js](https://github.com/mozilla/pdf.js) | PDF.js reads content from PDF files and is used by the resume parser at its first step to read a resume PDF's content. |
 | **PDF Renderer** | [React-pdf](https://github.com/diegomura/react-pdf) | React-pdf creates PDF files and is used by the resume builder to create a downloadable PDF file. |
 
 ## 📁 Project Structure
@@ -50,7 +60,7 @@ OpenResume is created with the NextJS web framework and follows its project stru
 | / | /page.tsx | Home page that contains hero, auto typing resume, steps, testimonials, logo cloud, etc |
 | /resume-import | /resume-import/page.tsx | Resume import page, where you can choose to import data from an existing resume PDF. The main component used is `ResumeDropzone` (`/components/ResumeDropzone.tsx`) |
 | /resume-builder | /resume-builder/page.tsx | Resume builder page to build and download a resume PDF. The main components used are `ResumeForm` (`/components/ResumeForm`) and `Resume` (`/components/Resume`) |
-| /resume-parser | /resume-parser/page.tsx | Resume parser page to test a resume’s AST readability. The main library util used is `parseResumeFromPdf` (`/lib/parse-resume-from-pdf`) |
+| /resume-parser | /resume-parser/page.tsx | Resume parser page to test a resume's AST readability. The main library util used is `parseResumeFromPdf` (`/lib/parse-resume-from-pdf`) |
 
 ## 💻 Local Development
 

@@ -32,3 +32,9 @@
   --resume-control-bar-height: 3rem;
   --resume-padding: 1.5rem;
 }
+
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, #e5e7eb 1px, transparent 1px),
+    linear-gradient(to bottom, #e5e7eb 1px, transparent 1px);
+  background-size: 4rem 4rem;
+}

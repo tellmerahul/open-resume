@@ -1,4 +1,7 @@
+"use client";
+
 import { Link } from "components/documentation";
+import { useState } from "react";
 
 const QAS = [
   {
@@ -61,9 +64,9 @@ const QAS = [
           <br />
           While other resume builders may require email sign up and store user
           data in their databases, OpenResume believes that resume data should
-          remain private and accessible only on user’s local machine. Therefore,
-          OpenResume doesn’t require sign up to use the app, and all inputted
-          data is stored in user’s browser that only user has access to.
+          remain private and accessible only on user's local machine. Therefore,
+          OpenResume doesn't require sign up to use the app, and all inputted
+          data is stored in user's browser that only user has access to.
         </p>
       </>
     ),
@@ -108,7 +111,7 @@ const QAS = [
         <p>
           Another great way to support OpenResume is by spreading the words.
           Share it with your friends, on social media platforms, or with your
-          school’s career center. Our goal is to reach more people who struggle
+          school's career center. Our goal is to reach more people who struggle
           with creating their resume, and your word-of-mouth support would be
           greatly appreciated. If you use Github, you can also show your support
           by{" "}
@@ -123,15 +126,53 @@ const QAS = [
 ];
 
 export const QuestionsAndAnswers = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
-    <section className="mx-auto max-w-3xl divide-y divide-gray-300 lg:mt-4 lg:px-2">
-      <h2 className="text-center text-3xl font-bold">Questions & Answers</h2>
-      <div className="mt-6 divide-y divide-gray-300">
-        {QAS.map(({ question, answer }) => (
-          <div key={question} className="py-6">
-            <h3 className="font-semibold leading-7">{question}</h3>
-            <div className="mt-3 grid gap-2 leading-7 text-gray-600">
-              {answer}
+    <section className="mx-auto max-w-4xl px-4 py-16">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+          Frequently Asked Questions
+        </h2>
+        <p className="mt-4 text-lg text-gray-600">
+          Everything you need to know about OpenResume
+        </p>
+      </div>
+      <div className="space-y-4">
+        {QAS.map(({ question, answer }, index) => (
+          <div
+            key={index}
+            className="rounded-lg border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md"
+          >
+            <button
+              className="flex w-full items-center justify-between px-6 py-4 text-left"
+              onClick={() => setOpenIndex(openIndex === index ? null : index)}
+            >
+              <span className="text-lg font-medium text-gray-900">{question}</span>
+              <svg
+                className={`h-5 w-5 transform text-gray-500 transition-transform ${
+                  openIndex === index ? "rotate-180" : ""
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div
+              className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                openIndex === index ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
+              }`}
+            >
+              <div className="px-6 pb-4 text-gray-600">
+                {answer}
+              </div>
             </div>
           </div>
         ))}
